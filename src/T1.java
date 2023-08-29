@@ -10,12 +10,17 @@ public class T1 {
         System.out.print("Give coefficient c:");
         double c = Double.parseDouble(reader.nextLine());
 
-        if (Math.pow(b, 2) - 4*a*c < 0) {
+        double disc = Math.pow(b, 2) - 4*a*c;
+
+        if (disc < 0) {
             System.out.println("No real roots");
-        } else if (Math.pow(b, 2) - 4*a*c == 0) {
-            System.out.println("One real root");
+        } else if (disc == 0) {
+            double root1 = -b / (2*a);
+            System.out.println("One real root: " + root1 );
         } else {
-            System.out.println("Two real roots.");
+            double root2 = ((-b + Math.sqrt(disc)) / (2*a));
+            double root3 = ((-b - Math.sqrt(disc)) / (2*a));
+            System.out.println("Two real roots: " + root2 + " and " +root3);
         }
     }
 }
